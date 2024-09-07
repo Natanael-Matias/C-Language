@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/output.dir/main.c.o -o ../../bin/output  ../lib/libUTILSC.a ../lib/libCBOOKC.a ../lib/libBINOMIOC.a 

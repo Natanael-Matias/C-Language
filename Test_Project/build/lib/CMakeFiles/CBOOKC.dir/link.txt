@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCBOOKC.a CMakeFiles/CBOOKC.dir/CBook.c.o
+/usr/bin/ranlib libCBOOKC.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libBINOMIOC.a CMakeFiles/BINOMIOC.dir/binomio.c.o
+/usr/bin/ranlib libBINOMIOC.a

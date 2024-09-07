@@ -1,0 +1,2 @@
+/usr/bin/ar qc libUTILSC.a CMakeFiles/UTILSC.dir/Utils.c.o
+/usr/bin/ranlib libUTILSC.a

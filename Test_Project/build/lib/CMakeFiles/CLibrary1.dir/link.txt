@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCLibrary1.a CMakeFiles/CLibrary1.dir/Utils.c.o
+/usr/bin/ranlib libCLibrary1.a
