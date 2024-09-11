@@ -1,2 +1,0 @@
-/usr/bin/ar qc libCLibrary2.a CMakeFiles/CLibrary2.dir/CBook.c.o
-/usr/bin/ranlib libCLibrary2.a

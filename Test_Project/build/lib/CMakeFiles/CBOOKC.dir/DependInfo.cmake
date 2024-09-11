@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/lib/CBook.c" "lib/CMakeFiles/CBOOKC.dir/CBook.c.o" "gcc" "lib/CMakeFiles/CBOOKC.dir/CBook.c.o.d"
+  "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/lib/CBook.c" "lib/CMakeFiles/CBOOKC.dir/CBook.c.o" "gcc" "lib/CMakeFiles/CBOOKC.dir/CBook.c.o.d"
   )
 
 # Targets to which this target links.

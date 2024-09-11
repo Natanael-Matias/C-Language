@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project
+# Install script for directory: /mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/scr/cmake_install.cmake")
-  include("/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/lib/cmake_install.cmake")
+  include("/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/scr/cmake_install.cmake")
+  include("/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/lib/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

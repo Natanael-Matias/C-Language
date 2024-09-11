@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I"/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/lib/../include"
+C_INCLUDES = -I"/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/lib/../include"
 
 C_FLAGS = 
 

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project"
+CMAKE_SOURCE_DIR = "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build"
+CMAKE_BINARY_DIR = "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/CMakeFiles" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/scr//CMakeFiles/progress.marks"
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scr/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/CMakeFiles" 0
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/CMakeFiles" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/scr//CMakeFiles/progress.marks"
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scr/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scr/clean
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scr/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scr/preinstall
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scr/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scr/preinstall
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scr/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 scr/CMakeFiles/output.dir/rule:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scr/CMakeFiles/output.dir/rule
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scr/CMakeFiles/output.dir/rule
 .PHONY : scr/CMakeFiles/output.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ output: scr/CMakeFiles/output.dir/rule
 
 # fast build rule for target.
 output/fast:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(MAKE) $(MAKESILENT) -f scr/CMakeFiles/output.dir/build.make scr/CMakeFiles/output.dir/build
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(MAKE) $(MAKESILENT) -f scr/CMakeFiles/output.dir/build.make scr/CMakeFiles/output.dir/build
 .PHONY : output/fast
 
 main.o: main.c.o
@@ -135,7 +135,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(MAKE) $(MAKESILENT) -f scr/CMakeFiles/output.dir/build.make scr/CMakeFiles/output.dir/main.c.o
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(MAKE) $(MAKESILENT) -f scr/CMakeFiles/output.dir/build.make scr/CMakeFiles/output.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -143,7 +143,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(MAKE) $(MAKESILENT) -f scr/CMakeFiles/output.dir/build.make scr/CMakeFiles/output.dir/main.c.i
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(MAKE) $(MAKESILENT) -f scr/CMakeFiles/output.dir/build.make scr/CMakeFiles/output.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -151,7 +151,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(MAKE) $(MAKESILENT) -f scr/CMakeFiles/output.dir/build.make scr/CMakeFiles/output.dir/main.c.s
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(MAKE) $(MAKESILENT) -f scr/CMakeFiles/output.dir/build.make scr/CMakeFiles/output.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

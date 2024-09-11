@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/lib
+# Install script for directory: /mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

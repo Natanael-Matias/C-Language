@@ -1,7 +1,7 @@
 lib/CMakeFiles/BINOMIOC.dir/binomio.c.o: \
- /mnt/c/Users/natan/OneDrive/Área\ de\ Trabalho/Cursos/Linguagem_C/Test_Project/lib/binomio.c \
+ /mnt/c/Users/natan/OneDrive/Área\ de\ Trabalho/Cursos/C-Language/Test_Project/lib/binomio.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/natan/OneDrive/Área\ de\ Trabalho/Cursos/Linguagem_C/Test_Project/lib/../include/binomio.h \
+ /mnt/c/Users/natan/OneDrive/Área\ de\ Trabalho/Cursos/C-Language/Test_Project/lib/../include/binomio.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

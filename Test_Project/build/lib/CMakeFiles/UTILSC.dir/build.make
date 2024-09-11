@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project"
+CMAKE_SOURCE_DIR = "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build"
+CMAKE_BINARY_DIR = "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build"
 
 # Include any dependencies generated for this target.
 include lib/CMakeFiles/UTILSC.dir/depend.make
@@ -72,16 +72,16 @@ include lib/CMakeFiles/UTILSC.dir/flags.make
 lib/CMakeFiles/UTILSC.dir/Utils.c.o: lib/CMakeFiles/UTILSC.dir/flags.make
 lib/CMakeFiles/UTILSC.dir/Utils.c.o: ../lib/Utils.c
 lib/CMakeFiles/UTILSC.dir/Utils.c.o: lib/CMakeFiles/UTILSC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object lib/CMakeFiles/UTILSC.dir/Utils.c.o"
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/lib" && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT lib/CMakeFiles/UTILSC.dir/Utils.c.o -MF CMakeFiles/UTILSC.dir/Utils.c.o.d -o CMakeFiles/UTILSC.dir/Utils.c.o -c "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/lib/Utils.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object lib/CMakeFiles/UTILSC.dir/Utils.c.o"
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/lib" && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT lib/CMakeFiles/UTILSC.dir/Utils.c.o -MF CMakeFiles/UTILSC.dir/Utils.c.o.d -o CMakeFiles/UTILSC.dir/Utils.c.o -c "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/lib/Utils.c"
 
 lib/CMakeFiles/UTILSC.dir/Utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/UTILSC.dir/Utils.c.i"
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/lib" && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/lib/Utils.c" > CMakeFiles/UTILSC.dir/Utils.c.i
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/lib" && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/lib/Utils.c" > CMakeFiles/UTILSC.dir/Utils.c.i
 
 lib/CMakeFiles/UTILSC.dir/Utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/UTILSC.dir/Utils.c.s"
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/lib" && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/lib/Utils.c" -o CMakeFiles/UTILSC.dir/Utils.c.s
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/lib" && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/lib/Utils.c" -o CMakeFiles/UTILSC.dir/Utils.c.s
 
 # Object files for target UTILSC
 UTILSC_OBJECTS = \
@@ -93,19 +93,19 @@ UTILSC_EXTERNAL_OBJECTS =
 lib/libUTILSC.a: lib/CMakeFiles/UTILSC.dir/Utils.c.o
 lib/libUTILSC.a: lib/CMakeFiles/UTILSC.dir/build.make
 lib/libUTILSC.a: lib/CMakeFiles/UTILSC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libUTILSC.a"
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/lib" && $(CMAKE_COMMAND) -P CMakeFiles/UTILSC.dir/cmake_clean_target.cmake
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/lib" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UTILSC.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libUTILSC.a"
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/lib" && $(CMAKE_COMMAND) -P CMakeFiles/UTILSC.dir/cmake_clean_target.cmake
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/lib" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UTILSC.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/CMakeFiles/UTILSC.dir/build: lib/libUTILSC.a
 .PHONY : lib/CMakeFiles/UTILSC.dir/build
 
 lib/CMakeFiles/UTILSC.dir/clean:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/lib" && $(CMAKE_COMMAND) -P CMakeFiles/UTILSC.dir/cmake_clean.cmake
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/lib" && $(CMAKE_COMMAND) -P CMakeFiles/UTILSC.dir/cmake_clean.cmake
 .PHONY : lib/CMakeFiles/UTILSC.dir/clean
 
 lib/CMakeFiles/UTILSC.dir/depend:
-	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/lib" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/lib" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/Linguagem_C/Test_Project/build/lib/CMakeFiles/UTILSC.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/lib" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/lib" "/mnt/c/Users/natan/OneDrive/Área de Trabalho/Cursos/C-Language/Test_Project/build/lib/CMakeFiles/UTILSC.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : lib/CMakeFiles/UTILSC.dir/depend
 

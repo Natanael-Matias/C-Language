@@ -1,7 +1,7 @@
 lib/CMakeFiles/CBOOKC.dir/CBook.c.o: \
- /mnt/c/Users/natan/OneDrive/Área\ de\ Trabalho/Cursos/Linguagem_C/Test_Project/lib/CBook.c \
+ /mnt/c/Users/natan/OneDrive/Área\ de\ Trabalho/Cursos/C-Language/Test_Project/lib/CBook.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/natan/OneDrive/Área\ de\ Trabalho/Cursos/Linguagem_C/Test_Project/lib/../include/CBook.h \
+ /mnt/c/Users/natan/OneDrive/Área\ de\ Trabalho/Cursos/C-Language/Test_Project/lib/../include/CBook.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
