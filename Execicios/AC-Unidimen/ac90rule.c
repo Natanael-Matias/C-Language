@@ -3,7 +3,7 @@
 
 #define ALIVE       0xB2
 #define DEAD        0xB0
-#define LENGTH      31
+#define LENGTH      61
 #define GENERATION  31
 
 typedef enum {
@@ -29,9 +29,9 @@ void main(void) {
             else                        nextGen[i] = CellState(prevGen[i-1], prevGen[i+1]);
         }
         
-        for(int i = 0; i < LENGTH; i++) {
+        for(int i = 0; i < LENGTH; i++)
             prevGen[i] = nextGen[i];
-        }
+
         printf("\n");
     }
 
