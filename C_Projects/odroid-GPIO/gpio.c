@@ -101,7 +101,7 @@ static status_t release_pin(pin_t pin){
     return status;
 }
 
-status_t set_pin(pin_t pin) {
+static status_t set_pin(pin_t pin) {
     char buf[50];
     int fp;
     status_t status = ok;
@@ -136,7 +136,7 @@ status_t set_pin(pin_t pin) {
     return status;
 }
 
-status_t reset_pin(pin_t pin) {
+static status_t reset_pin(pin_t pin) {
     char buf[50];
     int fp;
     status_t status = ok;
@@ -175,7 +175,10 @@ void write_pin(pin_t pin, const int pin_value) {
     switch (pin_value) {
         case 0:
         case 1:
-            command[pin_value](pin);
+            if (!command[pin_value](pin)){
+                fprintf(stderr, ">> [write_pin] Erro ao definir o valor do pino.");
+                exit(1);
+            }
             break;
         default:
             fprintf(stderr, ">> [write_pin] Incorrect value: %d\n", pin_value);
@@ -188,6 +191,12 @@ int read_pin(pin_t pin) {
     char buf[50];
     int fp;
 
+    /*
+    TODO: Encapsular export_pin(pin) e direction_pin(pin, 1) em uma
+            função de config utilizando FSM para garantir a criação do
+            diretório para utilização do pino e eliminar a necessidade de polling
+            com usleep().
+    */
     /* export pin */
     if (!export_pin(pin))
         return -1;
@@ -196,7 +205,7 @@ int read_pin(pin_t pin) {
     if (!direction_pin(pin, 1)) {
         release_pin(pin);
         return -1;
-    };
+    }
 
     snprintf(buf, sizeof buf, gpioDir "gpio%d/" value, pin);
     if ((fp = open(buf, O_RDONLY)) == -1) {

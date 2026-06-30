@@ -49,9 +49,14 @@ typedef enum {
     ok
 } status_t;
 
-status_t set_pin(pin_t pin);
-status_t reset_pin(pin_t pin);
 void write_pin(pin_t pin, int pin_value);
 int read_pin(pin_t pin);
+
+/*
+TODO: Implementar rotinas para definição do pull-up/pull-down
+TODO: Implementar rotinas para interrupção de GPIO.
+TODO: Implementar mapeamento dos pinos
+TODO: Implementar info dos pinos
+*/
 
 #endif
