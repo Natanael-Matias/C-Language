@@ -1,6 +1,8 @@
 #ifndef _GPIO_H
 #define _GPIO_H
 
+#include <stdio.h>
+
 #ifdef ODROID_C4
     typedef enum{
         gpioh_5     = 432,
@@ -29,6 +31,8 @@
         gpiox_18    = 494,
         gpiox_19    = 495
     }pin_t;
+#else
+    typedef int pin_t;
 #endif
 
 #define SET     "1"
@@ -40,9 +44,14 @@
     #define send_log(msg, ...)      (void)0
 #endif
 
-void set_pin(pin_t pin);
-void reset_pin(pin_t pin);
-int write_pin(pin_t pin, int pin_value);
+typedef enum {
+    err,
+    ok
+} status_t;
+
+status_t set_pin(pin_t pin);
+status_t reset_pin(pin_t pin);
+void write_pin(pin_t pin, int pin_value);
 int read_pin(pin_t pin);
 
 #endif

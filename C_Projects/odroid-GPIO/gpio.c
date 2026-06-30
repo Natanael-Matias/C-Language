@@ -15,139 +15,172 @@
 #define out          "out"
 #define in           "in"
 
-typedef void (*pCommand)(pin_t pin);
+typedef status_t (*pCommand)(pin_t pin);
 
 pCommand command[2] = {
     reset_pin,
     set_pin
 };
 
-static void export_pin(pin_t pin) {
+static status_t export_pin(pin_t pin) {
     char buf[5];
     int fp, len;
+    status_t status = ok;
+
+    char gpio_path[50];
+    snprintf(gpio_path, sizeof gpio_path, gpioDir "gpio%d", pin);
+    if (!(access(gpio_path, F_OK))){
+        send_log(">> [export_pin] Pino previamente exportado.");
+        return status;
+    }
     
-    send_log(">> Caminho para config de export do pino %d: %s\n", pin, gpioDir export);
+    send_log(">> [export_pin] Caminho para config de export do pino %d: %s\n", pin, gpioDir export);
 
     if ((fp = open(gpioDir export, O_WRONLY)) == -1){
-        perror(">> Export: Erro ao abrir diretorio.");
-        exit(1);
+        perror(">> [export_pin] Erro ao abrir diretorio.");
+        return err;
     }
-
+    
     len = snprintf(buf, sizeof buf, "%d", pin);
     if (write(fp, buf, len) != len){
-        perror(">> Export: Erro na escrita.");
-        exit(1);
+        perror(">> [export_pin] Erro na escrita.");
+        status = err;
     }
 
+    usleep(1000);
     close(fp);
+
+    return status;
 }
 
-static void direction_pin(pin_t pin, const int dir) { // dir = 0 -> out, 1 -> in
+static status_t direction_pin(pin_t pin, const int dir) { // dir = 0 -> out, 1 -> in
     char buf[50];
     int fp;
+    status_t status =  ok;
     
     snprintf(buf, sizeof buf, gpioDir "gpio%d/" direction, pin);
-    send_log(">> Caminho para config de direcao do pino %d: %s\n", pin, buf);
+    send_log(">> [direction_pin] Caminho para config de direcao do pino %d: %s\n", pin, buf);
 
     if((fp = open(buf, O_WRONLY)) == -1) {
-        perror(">> Direction: Erro ao abrir diretorio.");
-        exit(1);
+        perror(">> [direction_pin] Erro ao abrir diretorio.");
+        return err;
     }
 
     char *msg = dir ? in : out;
     int len = strlen(msg);
     if(write(fp, msg, len) != len){
-        perror(">> Direction: Erro na escrita.");
-        exit(1);
+        perror(">> [direction_pin] Erro na escrita.");
+        status = err;
     }
 
+    usleep(1000);
     close(fp);
+
+    return status;
 }
 
-static void release_pin(pin_t pin){
+static status_t release_pin(pin_t pin){
     char buf[5];
     int fp, len;
+    status_t status = ok;
     
-    send_log(">> Caminho para config de unexport do pino %d: %s\n", pin, gpioDir release);
+    send_log(">> [release_pin] Caminho para config de unexport do pino %d: %s\n", pin, gpioDir release);
 
     if ((fp = open(gpioDir release, O_WRONLY)) == -1){
-        perror(">> Export: Erro ao abrir diretorio.");
-        exit(1);
+        perror(">> [release_pin] Erro ao abrir diretorio.");
+        return err;
     }
 
     len = snprintf(buf, sizeof buf, "%d", pin);
     if (write(fp, buf, len) != len){
-        perror(">> Export: Erro na escrita.");
-        exit(1);
+        perror(">> [release_pin] Erro na escrita.");
+        status = err;
     }
 
     close(fp);
+    return status;
 }
 
-void set_pin(pin_t pin) {
+status_t set_pin(pin_t pin) {
     char buf[50];
     int fp;
+    status_t status = ok;
 
     /* export pin */
-    export_pin(pin);
+    if (!export_pin(pin))
+        return err;
 
     /* configure direction */
-    direction_pin(pin, 0);
+    if (!direction_pin(pin, 0)){
+        release_pin(pin);
+        return err;
+    }
+        
     
     snprintf(buf, sizeof buf, gpioDir "gpio%d/" value, pin);
     if ((fp = open(buf, O_WRONLY)) == -1) {
-        perror(">> Set pin: Erro ao abrir diretorio.");
-        exit(1);
+        perror(">> [set_pin] Erro ao abrir diretorio.");
+        release_pin(pin);
+        return err;
     }
 
     int len = strlen(SET);
     if (write(fp, SET, len) != len) {
-        perror(">> Set pin: Erro na escrita.");
-        exit(1);
+        perror(">> [set_pin] Erro na escrita.");
+        status = err;
     }
     
-    release_pin(pin);
     close(fp);
+    release_pin(pin);
+
+    return status;
 }
 
-void reset_pin(pin_t pin) {
+status_t reset_pin(pin_t pin) {
     char buf[50];
     int fp;
+    status_t status = ok;
 
     /* export pin */
-    export_pin(pin);
+    if (!export_pin(pin))
+        return err;
 
     /* configure direction */
-    direction_pin(pin, 0);
+    if (!direction_pin(pin, 0)){
+        release_pin(pin);
+        return err;
+    }
+        
 
     snprintf(buf, sizeof buf, gpioDir "gpio%d/" value, pin);
     if ((fp = open(buf, O_WRONLY)) == -1) {
-        perror(">> Reset pin: Erro ao abrir diretorio.");
-        exit(1);
+        perror(">> [reset_pin] Erro ao abrir diretorio.");
+        release_pin(pin);
+        return err;
     }
 
     int len = strlen(RESET);
     if (write(fp, RESET, len) != len) {
-        perror(">> RESET: Erro na escrita.");
-        exit(1);
+        perror(">> [reset_pin] Erro na escrita.");
+        status = err;
     }
-
-    release_pin(pin);
+    
     close(fp);
+    release_pin(pin);
+
+    return status;
 }
 
-int write_pin(pin_t pin, const int pin_value) {
+void write_pin(pin_t pin, const int pin_value) {
     switch (pin_value) {
         case 0:
         case 1:
             command[pin_value](pin);
             break;
         default:
-            fprintf(stderr, ">> Incorrect value: %d\n", pin_value);
-            return -1;
+            fprintf(stderr, ">> [write_pin] Incorrect value: %d\n", pin_value);
+            exit(1);
     }
-    
-    return 0;
 }
 
 
@@ -156,25 +189,32 @@ int read_pin(pin_t pin) {
     int fp;
 
     /* export pin */
-    export_pin(pin);
+    if (!export_pin(pin))
+        return -1;
 
     /* configure direction */
-    direction_pin(pin, 0);
+    if (!direction_pin(pin, 1)) {
+        release_pin(pin);
+        return -1;
+    };
 
     snprintf(buf, sizeof buf, gpioDir "gpio%d/" value, pin);
     if ((fp = open(buf, O_RDONLY)) == -1) {
-        perror(">> Read pin: Erro ao abrir diretorio.");
+        perror(">> [read_pin] Erro ao abrir diretorio.");
+        release_pin(pin);
         return -1;
     }
 
-    char msg[2];
-    if (read(fp, msg, sizeof msg) == -1) {
-        perror(">> Read pin: Erro na leitura.");
+    char msg[2] = {0};
+    if (read(fp, msg, 1) == -1) {
+        perror(">> [read_pin] Erro na leitura.");
+        close(fp);
+        release_pin(pin);
         return -1;
     }
 
-    release_pin(pin);
     close(fp);
+    release_pin(pin);
 
     return atoi(msg);
 }
